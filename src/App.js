@@ -1,10 +1,15 @@
 import React from 'react';
-import MyMap from './components/MyMap'
+import Map from './components/Map'
+import './style.css';
 
 function App() {
-  return (
-    <MyMap/>
-  );
+	return (
+		<div>
+			<Map zoom={3} center={{ lat: 200, lng: 200 }} />
+		</div>
+	);
 }
+
+
 
 export default App;
