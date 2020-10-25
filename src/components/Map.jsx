@@ -6,23 +6,25 @@ import L from "leaflet";
 export default class MapExample extends Component {
   constructor(props) {
     super(props);
-    this.mexicoRef = React.createRef();
+    this.tiffRef = React.createRef();
     this.windSpeedRef = React.createRef();
-    this.windDirectionRef = React.createRef();
+    // this.windDirectionRef = React.createRef();
   }
 
   render() {
-    const mexicoUrl = "fableMap/data/wind_speed.tif";
-    const mexicoOptions = {
-      band: 0,
-      displayMin: 0,
-      displayMax: 30,
-      name: "Wind speed",
-      colorScale: "rainbow",
-      clampLow: false,
-      clampHigh: true
+    //Cambiar SRC a Default al momento de exportar
+    // const tiffUrl = "tiffs/MEXICO-maxres.tif"; //laggy as shit, tarda 24s en cargar
+    // const tiffUrl = "tiffs/MEXICO-divSABE-success.tif"; //mexico pero con menor resolucion
+    const tiffUrl = "tiffs/ESACCI-2015-Mercator-Test-DIV30-success.tif"; //otro test 
+    const tiffOptions = {
+      rBand: 0,
+      gBand: 1,
+      bBand: 2,
+      alphaBand: 0,
+      transpValue: 0
     };
 
+    //Ya le agarre cariño a este, no borrar 😳
     const windSpeedUrl = "fableMap/data/wind_speed.tif";
     const windSpeedOptions = {
       band: 0,
@@ -34,12 +36,12 @@ export default class MapExample extends Component {
       clampHigh: true
     };
 
-    const windDirectionUrl = "https://stuartmatthews.github.io/leaflet-geotiff/tif/wind_direction.tif";
-    const windDirectionOptions = {
-      band: 0,
-      name: "Wind direction",
-      arrowSize: 40
-    };
+    // const windDirectionUrl = "https://stuartmatthews.github.io/leaflet-geotiff/tif/wind_direction.tif";
+    // const windDirectionOptions = {
+    //   band: 0,
+    //   name: "Wind direction",
+    //   arrowSize: 40
+    // };
 
     return (
       <div>
@@ -55,16 +57,19 @@ export default class MapExample extends Component {
               id="mapbox.streets"
             />
 
+            <RGBGeotiffLayer
+              layerRef={this.tiffRef}
+              url={tiffUrl}
+              options={tiffOptions}
+            />
+
             <PlottyGeotiffLayer
               layerRef={this.windSpeedRef}
               url={windSpeedUrl}
               options={windSpeedOptions}
             />
-            <VectorArrowsGeotiffLayer
-              layerRef={this.windDirectionRef}
-              url={windDirectionUrl}
-              options={windDirectionOptions}
-            />
+
+
           </Map>
         </div>
       </div>

@@ -5,7 +5,7 @@ import './style.css';
 function App() {
 	return (
 		<div>
-			<Map zoom={3} center={{ lat: 200, lng: 200 }} />
+			<Map zoom={2} center={{ lat: 0, lng: 0 }} />
 		</div>
 	);
 }
