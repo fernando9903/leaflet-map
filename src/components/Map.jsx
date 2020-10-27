@@ -15,7 +15,7 @@ export default class MapExample extends Component {
     //Cambiar SRC a Default al momento de exportar
     // const tiffUrl = "tiffs/MEXICO-maxres.tif"; //laggy as shit, tarda 24s en cargar
     // const tiffUrl = "tiffs/MEXICO-divSABE-success.tif"; //mexico pero con menor resolucion
-    const tiffUrl = "tiffs/ESACCI-2015-Mercator-Test-DIV30-success.tif"; //otro test 
+    const tiffUrl = "tiffs/MEXICO-wgs.tif"; //otro test 
     const tiffOptions = {
       rBand: 0,
       gBand: 1,
