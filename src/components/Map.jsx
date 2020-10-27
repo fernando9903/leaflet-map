@@ -43,6 +43,10 @@ export default class MapExample extends Component {
     //   arrowSize: 40
     // };
 
+    corner1 = L.latLng(-90, -200)
+    corner2 = L.latLng(90, 200)
+    bounds = L.latLngBounds(this.corner1, this.corner2)
+
     return (
       <div>
         <div>
@@ -50,6 +54,8 @@ export default class MapExample extends Component {
             center={this.props.center}
             zoom={this.props.zoom}
             length={4}
+            maxBoundsViscosity = {1.0} 
+            maxBounds = {this.bounds}
           >
             <TileLayer
               url="https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw"
