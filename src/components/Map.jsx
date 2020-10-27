@@ -1,78 +1,35 @@
 import React, { Component } from "react";
-import { Map, TileLayer, Marker, Popup, Polyline } from "react-leaflet";
-import { PlottyGeotiffLayer, RGBGeotiffLayer, VectorArrowsGeotiffLayer } from "./GeotiffLayer.jsx";
 import L from "leaflet";
 
+import { Map, TileLayer, Marker, Popup, Polyline } from "react-leaflet";
+
 export default class MapExample extends Component {
-  constructor(props) {
-    super(props);
-    this.tiffRef = React.createRef();
-    this.windSpeedRef = React.createRef();
-    // this.windDirectionRef = React.createRef();
-  }
-
+  
   render() {
-    //Cambiar SRC a Default al momento de exportar
-    // const tiffUrl = "tiffs/MEXICO-maxres.tif"; //laggy as shit, tarda 24s en cargar
-    // const tiffUrl = "tiffs/MEXICO-divSABE-success.tif"; //mexico pero con menor resolucion
-    const tiffUrl = "tiffs/ESACCI-2015-Mercator-Test-DIV30-success.tif"; //otro test 
-    const tiffOptions = {
-      rBand: 0,
-      gBand: 1,
-      bBand: 2,
-      alphaBand: 0,
-      transpValue: 0
-    };
-
-    //Ya le agarre cariño a este, no borrar 😳
-    const windSpeedUrl = "fableMap/data/wind_speed.tif";
-    const windSpeedOptions = {
-      band: 0,
-      displayMin: 0,
-      displayMax: 30,
-      name: "Wind speed",
-      colorScale: "rainbow",
-      clampLow: false,
-      clampHigh: true
-    };
-
-    // const windDirectionUrl = "https://stuartmatthews.github.io/leaflet-geotiff/tif/wind_direction.tif";
-    // const windDirectionOptions = {
-    //   band: 0,
-    //   name: "Wind direction",
-    //   arrowSize: 40
-    // };
-
+    //sacamos coords para definir de que a punto a que punto esta el mapa
+    //nomas pa q el usuario no se salga del mapa
+    var corner1 = L.latLng(-85.05112878, 180.0)
+    var corner2 = L.latLng(85.05112878, -179.999995508)
+    var bounds = L.latLngBounds(corner1, corner2)
     return (
-      <div>
-        <div>
-          <Map
-            center={this.props.center}
-            zoom={this.props.zoom}
-            length={4}
-          >
-            <TileLayer
-              url="https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw"
-              attribution='<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>'
-              id="mapbox.streets"
-            />
+      <Map
+        center={[0,0]}
+        zoom={6}
+        minZoom={3} //tampoco quiero que se vayan tan lejos alv o se ve culero u.u
+        maxZoom={6} //nomas lo exporte con 6 niveles de zooms pal github y tmb pq tarda un putero de 8 para arriba
+        // maxBoundsViscosity={true} // false = hace un efecto de rebote al querer ver fuera del mapa, true = lo opuesto lol
+        maxBounds={bounds}
+      >
 
-            <RGBGeotiffLayer
-              layerRef={this.tiffRef}
-              url={tiffUrl}
-              options={tiffOptions}
-            />
+        <TileLayer
+          url="./prueba-good/{z}/{x}/{y}.png" //era muy simple pero igual me quiero pegar un tiro pq tarde 1000 años en encontrar q la solucion era bn simple
+          id="tiff-chunk-rendersss"
+          noWrap="true"
+          tms="true" //esto va de ahuevo pq exporte en 'otro' formato el mapa??
+        />
 
-            <PlottyGeotiffLayer
-              layerRef={this.windSpeedRef}
-              url={windSpeedUrl}
-              options={windSpeedOptions}
-            />
-
-
-          </Map>
-        </div>
-      </div>
+      </Map>
     );
   }
+
 }
