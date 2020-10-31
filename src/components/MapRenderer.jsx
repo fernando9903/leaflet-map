@@ -3,7 +3,7 @@ import L from "leaflet";
 import 'leaflet/dist/leaflet.css';
 import mapData from '../data/countries.json';
 import { Map, TileLayer, GeoJSON, LayersControl } from "react-leaflet";
-const { BaseLayer, FeatureGroup } = LayersControl
+const { BaseLayer } = LayersControl
 
 export default class MapRenderer extends Component {
 
@@ -48,7 +48,7 @@ export default class MapRenderer extends Component {
     return (
       <Map
         center={[0, 0]}
-        zoom={6}
+        zoom={3}
         minZoom={3}
         maxZoom={6}
         maxBounds={bounds}
@@ -56,20 +56,67 @@ export default class MapRenderer extends Component {
       >
 
         <LayersControl position="topleft">
-          <BaseLayer checked name="ESACCI 2015 Mercator">
+          <BaseLayer checked name="ESACCI-LC-L4-LCCS-Map-300m-P1Y-2010-v2.0.7">
             <TileLayer
-              url="http://158.69.121.180/fablemap-testing/tifs/ESACCI_2015_mercator/{z}/{x}/{y}.png"
+              url="http://158.69.121.180/fablemap-testing/tifs/ESACCI-LC-L4-LCCS-Map-300m-P1Y-2010-v2.0.7/{z}/{x}/{y}.png"
               attribution='&amp;copy (Map source), Country names Tiles by <a href="http://stamen.com">Stamen Design</a>'
               id="esacci-mercator-tiles"
               tms="true"
               noWrap="true"
             />
-
           </BaseLayer>
-          <BaseLayer name="OpenStreetMap [TESTING despues se remueve]">
+          <BaseLayer name="ESACCI-LC-L4-LCCS-Map-300m-P1Y-2015-v2.0.7">
             <TileLayer
-              attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+              url="http://158.69.121.180/fablemap-testing/tifs/ESACCI-LC-L4-LCCS-Map-300m-P1Y-2015-v2.0.7/{z}/{x}/{y}.png"
+              attribution='&amp;copy (Map source), Country names Tiles by <a href="http://stamen.com">Stamen Design</a>'
+              id="esacci-mercator-tiles"
+              tms="true"
+              noWrap="true"
+            />
+          </BaseLayer>
+          <BaseLayer name="LIA_IFL2016_KBA">
+            <TileLayer
+              url="http://158.69.121.180/fablemap-testing/tifs/LIA_IFL2016_KBA/{z}/{x}/{y}.png"
+              attribution='&amp;copy (Map source), Country names Tiles by <a href="http://stamen.com">Stamen Design</a>'
+              id="esacci-mercator-tiles"
+              tms="true"
+              noWrap="true"
+            />
+          </BaseLayer>
+          <BaseLayer name="LIA_IFL_KBA_merc">
+            <TileLayer
+              url="http://158.69.121.180/fablemap-testing/tifs/LIA_IFL_KBA_merc/{z}/{x}/{y}.png"
+              attribution='&amp;copy (Map source), Country names Tiles by <a href="http://stamen.com">Stamen Design</a>'
+              id="esacci-mercator-tiles"
+              tms="true"
+              noWrap="true"
+            />
+          </BaseLayer>
+          <BaseLayer name="wdpa_april2019_1km_mollweide">
+            <TileLayer
+              url="http://158.69.121.180/fablemap-testing/tifs/wdpa_april2019_1km_mollweide/{z}/{x}/{y}.png"
+              attribution='&amp;copy (Map source), Country names Tiles by <a href="http://stamen.com">Stamen Design</a>'
+              id="esacci-mercator-tiles"
+              tms="true"
+              noWrap="true"
+            />
+          </BaseLayer>
+          <BaseLayer name="wdpa_april2019_1km_mercator">
+            <TileLayer
+              url="http://158.69.121.180/fablemap-testing/tifs/wdpa_april2019_1km_mercator/{z}/{x}/{y}.png"
+              attribution='&amp;copy (Map source), Country names Tiles by <a href="http://stamen.com">Stamen Design</a>'
+              id="esacci-mercator-tiles"
+              tms="true"
+              noWrap="true"
+            />
+          </BaseLayer>
+          <BaseLayer name="wdpa_april2019_1km_mercator_reclassr">
+            <TileLayer
+              url="http://158.69.121.180/fablemap-testing/tifs/wdpa_april2019_1km_mercator_reclass/{z}/{x}/{y}.png"
+              attribution='&amp;copy (Map source), Country names Tiles by <a href="http://stamen.com">Stamen Design</a>'
+              id="esacci-mercator-tiles"
+              tms="true"
+              noWrap="true"
             />
           </BaseLayer>
 
