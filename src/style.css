@@ -1,4 +1,11 @@
 .leaflet-container {
     width: 100%;
     height: 100vh;
-  }
+}
+
+
+/* Debug */
+
+.leaflet-tile {
+    /* border: solid black 5px; */
+}

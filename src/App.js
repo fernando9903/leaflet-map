@@ -1,13 +1,15 @@
 import React from 'react';
-import Map from './components/Map'
+import MapRenderer from './components/MapRenderer'
 import './style.css';
 
 function App() {
-	return (
-		<div>
-			<Map/>
-		</div>
-	);
+    return ( <
+        div >
+        <
+        MapRenderer / >
+        <
+        /div>
+    );
 }
 
 
