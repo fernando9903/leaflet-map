@@ -59,78 +59,15 @@ export default class MapRenderer extends Component {
       >
 
         <LayersControl position="topleft">
-          <BaseLayer name="Land cover in 2010 from ESA CCI">
+          <BaseLayer checked name="Land cover in 2010 from ESA CCI">
             <TileLayer
-              url="http://158.69.121.180/fablemap-testing/tifs/ESACCI-LC-L4-LCCS-Map-300m-P1Y-2010-v2.0.7/{z}/{x}/{y}.png"
-              attribution='&amp;copy (ESACCI-LC-L4-LCCS-Map-300m-P1Y-2010-v2.0.7), Country names Tiles by <a href="http://stamen.com">Stamen Design</a>'
+              url="http://158.69.121.180/fablemap-testing/tifs/esacci_2010/{z}/{x}/{y}.png"
+              attribution='&amp;copy (ESACCI-LC-L4-LCCS-Map-300m-P1Y-2010-v2.0.7), Country names tiles by <a href="http://stamen.com">Stamen Design</a>'
               id="esacci-mercator-tiles"
               tms="true"
               noWrap="true"
             />
           </BaseLayer>
-          <BaseLayer checked name="Land cover in 2010 from ESA CCI - COLOR TEST">
-            <TileLayer
-              url="http://158.69.121.180/fablemap-testing/tifs/colores/{z}/{x}/{y}.png"
-              attribution='&amp;copy (ESACCI-LC-L4-LCCS-Map-300m-P1Y-2010-v2.0.7), Country names Tiles by <a href="http://stamen.com">Stamen Design</a>'
-              id="esacci-mercator-tiles"
-              tms="true"
-              noWrap="true"
-            />
-          </BaseLayer>
-          {/* <BaseLayer name="Land cover in 2015 from ESA CCI">
-            <TileLayer
-              url="http://158.69.121.180/fablemap-testing/tifs/ESACCI-LC-L4-LCCS-Map-300m-P1Y-2015-v2.0.7/{z}/{x}/{y}.png"
-              attribution='&amp;copy (ESACCI-LC-L4-LCCS-Map-300m-P1Y-2015-v2.0.7), Country names Tiles by <a href="http://stamen.com">Stamen Design</a>'
-              id="esacci-mercator-tiles"
-              tms="true"
-              noWrap="true"
-            />
-          </BaseLayer>
-          <BaseLayer name="Land where natural processes predominate">
-            <TileLayer
-              url="http://158.69.121.180/fablemap-testing/tifs/LIA_IFL2016_KBA/{z}/{x}/{y}.png"
-              attribution='&amp;copy (LIA_IFL2016_KBA), Country names Tiles by <a href="http://stamen.com">Stamen Design</a>'
-              id="esacci-mercator-tiles"
-              tms="true"
-              noWrap="true"
-            />
-          </BaseLayer>
-          <BaseLayer name="LIA_IFL_KBA_merc">
-            <TileLayer
-              url="http://158.69.121.180/fablemap-testing/tifs/LIA_IFL_KBA_merc/{z}/{x}/{y}.png"
-              attribution='&amp;copy (Map source), Country names Tiles by <a href="http://stamen.com">Stamen Design</a>'
-              id="esacci-mercator-tiles"
-              tms="true"
-              noWrap="true"
-            />
-          </BaseLayer>
-          <BaseLayer name="Low impact areas from Jacobson et al. (2019)">
-            <TileLayer
-              url="http://158.69.121.180/fablemap-testing/tifs/LIA_low/{z}/{x}/{y}.png"
-              attribution='&amp;copy (LIA_low), Country names Tiles by <a href="http://stamen.com">Stamen Design</a>'
-              id="esacci-mercator-tiles"
-              tms="true"
-              noWrap="true"
-            />
-          </BaseLayer>
-          <BaseLayer name="Key biodiversity areas from BirdLife International (2019)">
-            <TileLayer
-              url="http://158.69.121.180/fablemap-testing/tifs/kba_2019/{z}/{x}/{y}.png"
-              attribution='&amp;copy (kba_2019), Country names Tiles by <a href="http://stamen.com">Stamen Design</a>'
-              id="esacci-mercator-tiles"
-              tms="true"
-              noWrap="true"
-            />
-          </BaseLayer>
-          <BaseLayer name="Protected areas from ICUN-WCMC 2019">
-            <TileLayer
-              url="http://158.69.121.180/fablemap-testing/tifs/wdpa_april2019_1km_mercator/{z}/{x}/{y}.png"
-              attribution='&amp;copy (wdpa_april2019_1km_mercator), Country names Tiles by <a href="http://stamen.com">Stamen Design</a>'
-              id="esacci-mercator-tiles"
-              tms="true"
-              noWrap="true"
-            />
-          </BaseLayer> */}
 
           <LayersControl.Overlay name="Show countries names" checked="true">
             <TileLayer
