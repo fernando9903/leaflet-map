@@ -24,8 +24,9 @@ const Styles = styled.div`
     .navtitle{
         font-weight:lighter;
         font-size:250%;
-        margin-bottom:100px;
         margin-left:20%;
+        vertical-align: top;
+        line-height: 179%;
     }
 `;
 
