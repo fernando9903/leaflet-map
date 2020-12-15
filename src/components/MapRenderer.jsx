@@ -143,7 +143,7 @@ export default class MapRenderer extends Component {
         <GeoJSON
           style={this.unselectedStyle}
           data={mapData.features}
-        // onEachFeature={this.onEachCountry}
+        onEachFeature={this.onEachCountry}
         />
         {/* <Control position="topright" >
           <PaneInfoRenderer/>
