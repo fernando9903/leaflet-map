@@ -21,13 +21,12 @@ const Styles = styled.div`
         margin-bottom: 0.5%;
         margin-left: 1%;
     }
-    ul{
-        list-style: none;
+    .navtitle{
+        font-weight:lighter;
+        font-size:250%;
+        margin-bottom:100px;
+        margin-left:20%;
     }
-    li{
-        font-size: 18px;
-        color: #fff;
-    }    
 `;
 
 class HeaderBar extends Component {
@@ -41,6 +40,9 @@ class HeaderBar extends Component {
                         <img className="d-inline-block align-top" id="FoodAndLand_LOGO" src={FoodAndLand_LOGO} />
                         <img className="d-inline-block align-top" id="Bioversity_LOGO" src={Bioversity_LOGO} />
                     </Navbar.Brand>
+                    <span class="navbar-text navtitle">
+                        Biodiversity Data Explorer
+                    </span>
                     {/* <ul className="p-4 d-flex justify-content-end ">
                         <li className="m-3"><a className="text-white" href="#">Home</a></li>
                         <li className="m-3"><a className="text-white" href="#">Scenathons</a></li>
