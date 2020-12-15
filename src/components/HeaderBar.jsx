@@ -40,7 +40,7 @@ class HeaderBar extends Component {
                         <img className="d-inline-block align-top" id="FoodAndLand_LOGO" src={FoodAndLand_LOGO} />
                         <img className="d-inline-block align-top" id="Bioversity_LOGO" src={Bioversity_LOGO} />
                     </Navbar.Brand>
-                    <span class="navbar-text navtitle">
+                    <span className="navbar-text navtitle">
                         Biodiversity Data Explorer
                     </span>
                     {/* <ul className="p-4 d-flex justify-content-end ">
