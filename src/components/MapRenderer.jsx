@@ -53,7 +53,7 @@ export default class MapRenderer extends Component {
         center={[0, 0]}
         zoom={3}
         minZoom={3}
-        maxZoom={6}
+        maxZoom={10}
         maxBounds={bounds}
         maxBoundsViscosity={true}
       >
