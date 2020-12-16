@@ -61,6 +61,7 @@ export default class MapRenderer extends Component {
         <LayersControl position="topleft">
           <BaseLayer checked name="Land cover in 2010 from ESA CCI">
             <TileLayer
+              url="http://158.69.121.180/fablemap-testing/tifs/esacci_2010/{z}/{x}/{y}.png"
               attribution='&amp;copy (ESACCI-LC-L4-LCCS-Map-300m-P1Y-2010-v2.0.7), Country names tiles by <a href="http://stamen.com">Stamen Design</a>'
               id="esacci-2010-mercator-tiles"
               tms="true"
